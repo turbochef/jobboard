@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :employers
   resources :jobs
 
-  root 'jobs#index'
+  root 'pages/home'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

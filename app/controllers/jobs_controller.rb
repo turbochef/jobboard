@@ -1,10 +1,11 @@
 class JobsController < ApplicationController
+  before_action :authenticate_employer!
   before_action :set_job, only: [:show, :edit, :update, :destroy]
 
   # GET /jobs
   # GET /jobs.json
   def index
-    @jobs = Job.all
+    @jobs = current_employer.jobs.all
   end
 
   # GET /jobs/1
@@ -24,7 +25,7 @@ class JobsController < ApplicationController
   # POST /jobs
   # POST /jobs.json
   def create
-    @job = Job.new(job_params)
+    @job = current_employer.jobs.new(job_params)
 
     respond_to do |format|
       if @job.save
