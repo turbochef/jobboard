@@ -1,2 +1,10 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<table>
+
+<% @jobs.each do |job| %> 
+	<tr>
+        <td><%= job.title %></td>
+        <td><%= job.description %></td>
+        <td><%= job.company %></td>
+	</tr>
+<% end %>
+</table>

@@ -8,13 +8,22 @@
 </head>
 <body>
 
-<%= link_to "emp signup", new_employer_registration_path  %>
 
-<%= link_to "emp login", new_employer_session_path %>
+
+<% if current_employer %>
 
 <%= link_to "emp edit", edit_employer_registration_path %>
 
 <%= link_to "logout", destroy_employer_session_path,:method => :delete %>
+
+<% else %>
+
+<%= link_to "emp signup", new_employer_registration_path  %>
+
+<%= link_to "emp login", new_employer_session_path %>
+
+<% end %>
+
 
 
 <%= yield %>

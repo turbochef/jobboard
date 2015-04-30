@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :students
   get 'pages/home'
 
   devise_for :employers
