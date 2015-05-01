@@ -1,9 +1,9 @@
-<table>
+<div class="list-group">
+<% @jobs.each do |job| %>
 
-<% @jobs.each do |job| %> 
-	<tr>
-        <td><%= job.title %></td>
-        <td><%= job.description %></td>
-	</tr>
+	 <%= link_to job, class:"list-group-item" do %>
+		<h2><%= job.employer.name %>-<%= job.title %></h2>
+		<h3><%= job.created_at.strftime("%d %b. %Y") %></h3>
+      <% end %>
 <% end %>
-</table>
+</div>
